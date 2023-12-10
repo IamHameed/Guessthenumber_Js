@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the number</title>
+    <style>
+        body{
+            background-color: black;
+            color: azure;
+        }
+        .heading{
+            text-align: center;
+            padding-block: 15px;
+            background-color: rgb(127, 77, 77);
+            color: aqua;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-bottom: 20px;
+        }
+        input{
+            width: 300px;
+            height: 30px;
+            display: block;
+            text-align: center;
+            margin-left: 40%;
+            margin-bottom: 20px;
+
+        }
+        .input button{
+            padding-inline: 20px;
+            padding-block: 10px;
+            text-align: center;
+            margin-left: 47%;
+        }
+        #result{
+            text-align: center;
+            font-size: 30px;
+        }
+        #score{
+            text-align: center;
+            font-size: 20px;
+        }
+        
+    </style>
+
+</head>
+<body>
+    <div class="heading">
+        <h1>Guess the number you can</h1>
+    </div>
+    <div class="input">
+        <input  id="guessnumber"type="number">
+        <button onclick="check ()">Check</button>
+    </div>
+    <p id="result">Result</p>
+    <p id="score">score =10</p>
+    <script>
+        var gnumber = document.getElementById("guessnumber")
+        var result = document.getElementById("result")
+        var score = document.getElementById("score")
+        var totalscore=10
+        var randomnumber= Math.floor(Math.random()*10)+1
+
+        function check ()
+        {
+            var gunumber = gnumber.value
+            if(randomnumber==gunumber)
+            {
+                result.textContent="you win"
+                alert("you won game")
+
+            }
+            else{
+                totalscore=totalscore-1
+                score.textContent="your total score="+totalscore
+                result.textContent="your Wrong keep try with other number"
+            }
+
+        }
+        
+    </script>
+    
+</body>
+</html>
